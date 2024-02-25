@@ -10,7 +10,7 @@
 
         .animate-on-scroll{
           opacity: 0;
-            transform: translateY(100px);
+            transform: translateY(50px);
             transition: all 1s ease-out;
             transition-delay: 0.2s;
         }
@@ -82,7 +82,7 @@
           border-radius:4%;
           box-shadow: 12px 12px 9px 1px rgba(0, 0, 255, .2);
           color:rgb(33, 31, 37);
-          animation:enterFromLeft 3s;
+          animation:enterFromLeft 1.5s;
           
 
       }
@@ -92,7 +92,7 @@
 
       }
       #rightCard{
-        background-image:linear-gradient("to bottom", rgba(62, 183, 156, 0.125) 0%, rgba(62, 183, 156, 0.05) 25%, rgba(62, 183, 156, 0.05) 75%, rgba(62, 183, 156, 0.125) 100%);
+        
        
         animation: none;
         
@@ -131,16 +131,33 @@
           opacity: 0%;
         }
       }
-   
+   .muteButton{
+    border: 1px solid #3498db;
+    
+    color: White;
+    background-color: transparent;
+    font-size: 12px;
+    cursor:pointer;
+    
+   }
+   .muteButton:hover{
+    background-color: #3498dbc6;
+    color:rgb(222, 250, 244);
+    font-size: 14px;
+   }
    </style>
   </head>
   <body>
     <div id="loader" class="center"></div>
-    <audio autoplay  =>
+    <audio autoplay id="audio" >
       <source src="SmogCity_Song1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
+   
+
+    
     <div id="textFloat" style = "position:absolute; top: 20px; bottom:0px;">
+      <div style="left:30px;top:10px;"><button class="muteButton" onclick="muteAudio()"> mute </button></div>
       <div id="inner" style = "position:relative;">
       <H1>Welcome to Smog City</H1>
         <p class="animate-on-scroll" style="text-align: center;transition-delay: 2s;"> Please Scroll </p>

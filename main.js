@@ -9,7 +9,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     })
 },{
-    threshold:0.5
+    threshold:0.1
 });
 
 for (let i=0;i< animation_elements.length;i++){
@@ -20,3 +20,8 @@ for (let i=0;i< animation_elements.length;i++){
 }
 
 
+function muteAudio(){
+    var audio = document.getElementById('audio');
+        audio.muted = !audio.muted;
+    //audio.paused = !audio.paused;
+}
