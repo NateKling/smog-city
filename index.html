@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <style>
+
+        .animate-on-scroll{
+          opacity: 0;
+            transform: translateY(100px);
+            transition: all 1s ease-out;
+            transition-delay: 0.2s;
+        }
+        .animate{
+          opacity:1;
+          transform: translateY(0);
+        }
+
+        #loader {
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #444444;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+ 
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+      .anta-regular {
+        font-family: "Anta", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      body {
+        margin: 0;
+				overflow: hidden;
+        color: white;
+        font-family:Arial, Helvetica, sans-serif;
+        background-color: rgb(176, 78, 185);
+        
+      }
+      html, body {
+        height: 100%;
+        overflow-y:auto;
+        overflow-x:hidden;
+        
+      }
+   
+      h1 {
+        color:whitesmoke;
+        font-size: 72px;
+        font-family:"Anta";
+        text-shadow: 1px 3px 4px rgb(170, 34, 56);
+        margin-left: 2vw;
+        
+        
+      }
+      canvas {
+        display: block;
+      }
+      .logo{position:absolute;bottom:16px;right:-200px;width:32px;height:32px;z-index:2;background-image:url(https://app.spline.design/_assets/_icons/icon_favicon32x32.png);background-size:cover;}.logo:hover{opacity:0.8;}
+      
+      #rightCard,#leftCard{
+          text-align: left;
+         margin:40px;
+         min-width:30vw;
+          background-color:rgba(127, 255, 212, 0.76);
+          background-image:linear-gradient(rgba(127, 255, 212, 0.76),rgba(127, 255, 212, 0)); 
+          
+          padding:2%;
+          border-radius:4%;
+          box-shadow: 12px 12px 9px 1px rgba(0, 0, 255, .2);
+          color:rgb(33, 31, 37);
+          animation:enterFromLeft 3s;
+          
+
+      }
+      #cardContainer{
+        display:flex;
+        justify-content: right;
+
+      }
+      #rightCard{
+        background-image:linear-gradient("to bottom", rgba(62, 183, 156, 0.125) 0%, rgba(62, 183, 156, 0.05) 25%, rgba(62, 183, 156, 0.05) 75%, rgba(62, 183, 156, 0.125) 100%);
+       
+        animation: none;
+        
+      }
+
+      h1{
+        animation: fadeIn 2s ;
+       
+      }
+      
+      @keyframes enterFromLeft{
+        from{
+          opacity: 0;
+          transform:translateX(-40%);
+        }
+        to{
+          opacity: 1;
+          transform:translateX(0);
+        }
+      }
+      @keyframes fadeIn{
+        from{
+          opacity: 0;
+          transform:translateY(40%);
+        }
+        to{
+          opacity: 1;
+          transform:translateY(0);
+        }
+      }
+      @keyframes reset{
+        0%{
+          opacity: 0%;
+        }
+        100%{
+          opacity: 0%;
+        }
+      }
+   
+   </style>
+  </head>
+  <body>
+    <div id="loader" class="center"></div>
+    <audio autoplay muted =>
+      <source src="SmogCity_Song1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <div id="textFloat" style = "position:absolute; top: 20px; bottom:0px;">
+      <div id="inner" style = "position:relative;">
+      <H1>Welcome to Smog City</H1>
+        <p class="animate-on-scroll" style="text-align: center;transition-delay: 2s;"> Please Scroll </p>
+      <div id="spacer" style="height: 800px;"></div>
+      <div id="cardContainer" class = "animate-on-scroll">
+
+        <div id="leftCard" class = "animate-on-scroll">
+        <p> <b>Chapter I</b><br><br>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium cumque possimus, at veritatis temporibus eos accusamus? Esse nostrum aperiam ipsa ipsum saepe pariatur et non, ab excepturi officiis animi, iste placeat quasi mollitia voluptatem culpa odit cumque omnis expedita praesentium nobis fugiat? Cupiditate assumenda ratione dolorem delectus quidem quia impedit aperiam nobis unde? Deserunt, possimus? Voluptatem modi voluptatibus ullam blanditiis esse debitis voluptates iusto temporibus ea doloremque optio laudantium molestias cum excepturi cupiditate pariatur quod ab sit laborum, voluptas ad, non officiis corporis at. Perspiciatis, mollitia magnam! Deleniti, omnis eaque.</p>
+        </div>
+        <div id ="blank" style="min-width:50vw;"></div>
+      </div>
+
+
+      <div id="spacer" style="height: 400px;"></div>
+    
+      <div id="cardContainer" class = "animate-on-scroll">
+          <div id ="blank" style="min-width:50vw;"></div>
+              <div id="rightCard">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt expedita, laborum optio nulla dolorum ex praesentium? Nam temporibus magni amet?</p>
+            </div>
+        </div>
+      
+  
+     
+      
+    </div>
+    <div>
+      <img src="images/CatEnd_Meow.gif" style="width:100%;image-rendering: pixelated;"></img>
+    </div>
+   </div>
+    
+    <canvas id="canvas3d" style="position:fixed; z-index: -1;"></canvas>
+    <a class="logo" href="https://spline.design"></a>
+   
+
+
+
+    <script type="module">
+      import { Application } from './runtime.js';
+      //import { Application } from './@splinetool/runtime/build/runtime.js';
+      const canvas = document.getElementById('canvas3d');
+const app = new Application(canvas);
+app.load('https://prod.spline.design/d9VVDhNqHvglrxkB/scene.splinecode').then(() => {
+		
+    
+    const obj = app.findObjectByName('Cube');
+    const cane = app.findObjectByName('Path');
+    const sparks = app.findObjectByName('Sparks');
+    const cam = app.findObjectByName('Camera');
+    let lights = false;
+    let buttCamCreated = false;
+
+    //console.log(app.getSplineEvents());
+    //console.log(app.effects);
+    cane.visible = !cane.visible;
+     sparks.visible = !sparks.visible;
+    
+
+		console.log(obj); // Spline Object => { name: 'Cube', id: '7AF5EBC0-09BB-4720-B045-F478F8053AA4', position: {}, ... }
+   window.flipCam=()=>{
+    cam.emitEvent('mouseDown');
+   }
+    window.lightsOff=()=>{
+      if (lights){
+        app.setBackgroundColor('#ffffff');
+      }
+      else{
+        app.setBackgroundColor('#000000');
+      }
+      lights = !lights;
+    }
+    window.buttonClicked=()=>{ 
+      //cane.emitEvent('mouseDown');
+     // cane.rotation.y += .5;
+     cane.visible = !cane.visible;
+     sparks.visible = !sparks.visible;
+      // functions need to be passed like this because its a module and not a script
+    }
+		// move the object in 3D space
+		//obj.position.x += 10;
+    //app.emitEvent('mouseHover', 'Cube');
+
+    window.addButtCamButton=()=>
+    {
+      var newButton = document.createElement("button");
+        newButton.innerHTML = "Butt Cam View";
+        newButton.onclick = window.flipCam; 
+        document.getElementById('textFloat').appendChild(newButton);
+        buttCamCreated= true;
+    }
+
+    app.addEventListener('mouseDown', (e) => {
+      if (e.target.name == 'Path')
+        {
+         if(!buttCamCreated) {addButtCamButton();}
+				  console.log('I have been clicked!');
+        }
+		});
+
+	});
+    </script>
+   
+   <script>
+    document.onreadystatechange = function () {
+         if (document.readyState !== "complete") {
+             document.querySelector(
+                 "body").style.visibility = "hidden";
+             document.querySelector(
+                 "#loader").style.visibility = "visible";
+         } else {
+             document.querySelector(
+                 "#loader").style.display = "none";
+             document.querySelector(
+                 "body").style.visibility = "visible";
+         }
+     };
+ </script>
+    <script src="main.js"></script>
+  </body>
+</html>
+  
